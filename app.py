@@ -42,19 +42,19 @@ class SAPDashboard:
                 st.session_state.pagos_df = pagos
                 st.session_state.stock_df = stock
                 st.session_state.datos_cargados = True
-                st.success("✅ Datos cargados exitosamente")
+                st.success(" Datos cargados exitosamente")
                 st.rerun()
                 
         except FileNotFoundError as e:
-            st.error(f"❌ Error: No se encontraron los archivos necesarios. {str(e)}")
-            st.info("📋 Asegúrate de que los siguientes archivos estén en el directorio:")
+            st.error(f" Error: No se encontraron los archivos necesarios. {str(e)}")
+            st.info(" Asegúrate de que los siguientes archivos estén en el directorio:")
             st.code("""
             • F_ventas_sap.xlsx
             • F_pagos_clientes.xlsx
             • MM_stock_actual.xlsx
             """)
         except Exception as e:
-            st.error(f"❌ Error al cargar datos: {str(e)}")
+            st.error(f" Error al cargar datos: {str(e)}")
             logger.error(f"Error en carga de datos: {e}")
     
     def crear_sidebar(self):
@@ -62,7 +62,7 @@ class SAPDashboard:
             st.header(" Panel de Control")
             
             # Botón para recargar datos
-            if st.button("🔄 Recargar Datos", use_container_width=True):
+            if st.button("Recargar Datos", use_container_width=True):
                 st.session_state.datos_cargados = False
                 st.rerun()
             
@@ -206,7 +206,7 @@ class SAPDashboard:
             logger.error(f"Error al aplicar filtros: {e}")
             return ventas_df
     def crear_graficos(self, ventas_filtradas, pagos_df, stock_df):
-        st.subheader("📊 Análisis Visual")
+        st.subheader(" Análisis Visual")
         
         # Primera fila de gráficos
         col1, col2 = st.columns(2)
@@ -388,7 +388,7 @@ class SAPDashboard:
                         use_container_width=True
                     )
                     
-                    st.success("✅ Reporte generado exitosamente")
+                    st.success(" Reporte generado exitosamente")
                     
                     
                 except Exception as e:
