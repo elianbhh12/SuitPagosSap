@@ -8,7 +8,7 @@ from procesos import SAPDataProcessor
 
 # Configuración de página
 st.set_page_config(
-    page_title="Dashboard SAP Simulado",
+    page_title="SAVI Dashboard",
     page_icon="📊",
     layout="wide",
     initial_sidebar_state="expanded"
